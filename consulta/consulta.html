@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro Bovino</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="consulta.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Consulta de Bovinos</h1>
+    </header>
+
+    <div class="container">
+        <form class="col-lg-6 offset-lg-3">
+            <div class="row mt-2">
+                <div class="col-sm">
+                    <label>Brinco</label>
+                    <input maxlength="8" id="brincoc1" class="form-control" type="text" placeholder="Brinco">
+                </div>
+                <div class="col-sm">
+                    <label>Nome</label>
+                    <input maxlength="20" id="nomec1" class="form-control" type="text" placeholder="Nome">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-auto text-left">
+                    <button type="button" class="btn btn-danger" onclick="voltar()">Voltar</button>
+                </div>
+                <div class="col-sm text-right">
+                    <button type="button" class="btn btn-success" onclick="consultadados()">Consultar</button>
+                </div>
+            </div>
+        </form>
+
+        <div id="boitabela" class="table-responsive">
+            <table>
+                <tr>
+                    <th>Brinco</th>
+                    <th>Nome</th>
+                    <th>Situação</th>
+                    <th>Sexo</th>
+                    <th>Brinco Mãe</th>
+                    <th>Brinco Pai</th>
+                    <th>Raça</th>
+                    <th>Data Nascimento</th>
+                    <th>Data Prenhes</th>
+                    <th>Data Último Parto</th>
+                </tr>
+                <tr>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                    <td id="5"></td>
+                    <td id="6"></td>
+                    <td id="7"></td>
+                    <td id="8"></td>
+                    <td id="9"></td>
+                    <td id="10"></td>
+            </table>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script src="consulta.js"></script>
+<script src="../Servicos/bovinos.servicos.js"></script>
+
+</html>

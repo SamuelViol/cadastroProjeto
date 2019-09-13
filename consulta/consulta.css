@@ -1,0 +1,37 @@
+header{
+    background-color: #f1f1f1;
+    padding: 2px;
+    text-align: center;
+    empty-cells: hide;
+}
+/* 
+#tabela{
+  margin-top: 10px;
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 180px; 
+}
+
+#tabela td, #tabela th {
+    border: 1px solid #ddd;
+    padding: 2px;
+    
+} */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+

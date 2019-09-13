@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cadastro Bovino</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Cadastro de Bovinos</h1>
+    </header>
+
+    <div class="container">
+        <form class="col-lg-6 offset-lg-3">
+            <div class="row mt-2">
+                <div class="col-sm">
+                    <label>Brinco</label>
+                    <input onchange="consultarBrinco()" maxlength="8" id="brincoNome" class="form-control" type="text" placeholder="Brinco">
+                </div>
+                <div class="col-sm">
+                    <label>Nome</label>
+                    <input onchange="consultarNome()" maxlength="20" id="nomeBoi" class="form-control" type="text" placeholder="Nome">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-auto">
+                    <label>Situação</label>
+                    <select id="selectSituacao" class="form-control">
+                        <option>Lactante</option>
+                        <option>Seca</option>
+                        <option>Vendido</option>
+                        <option>Morto</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-auto">
+                    <label>Sexo</label>
+                    <div id ="radioSex" class="radio">
+                        <label><input value="M" type="radio" id="r1" name="sexradio" onclick="func()" > Macho</label>
+                        <label><input value="F" class="ml-4" type="radio" id="r2" name="sexradio" onclick="func()"> Femêa</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm">
+                    <label>Brinco Mãe</label>
+                    <input maxlength="8" id="brincoMae" class="form-control" type="text" placeholder="Brinco Mãe" onchange="consultarBrincoMae()">
+                    <input disabled id="brincoMCheck" class="form-control" type="text" placeholder="Situação do Cadastro" >
+                    <input disabled id="brincoSexMCheck" class="form-control" type="text" placeholder="Sexo" >
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label>Brinco Pai</label>
+                        <input maxlength="8" id="brincoPai" class="form-control" type="text" placeholder="Brinco Pai" onchange="consultarBrincoPai()">
+                        <input disabled id="brincoPCheck" class="form-control" type="text" placeholder="Situação do Cadastro" >
+                        <input disabled id="brincoSexPCheck" class="form-control" type="text" placeholder="Sexo" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-auto">
+                    <label>Raça</label>
+                    <select id="selectRaca" class="form-control">
+                        <option>Girolando</option>
+                        <option>Holandês</option>
+                        <option>Gir</option>
+                        <option>Jersey</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm">
+                    <label>Data de Nascimento</label>
+                    <input id="dataNasc" class="form-control" type="date">
+
+                    <label>Data da Prenhes</label>
+                    <input onchange="calcularParto()" class="form-control" id="dtPrenhe" type="date" required>
+                </div>
+
+                <div class="col-sm">
+                    <label>Data Próximo Parto</label>
+                    <input disabled class="form-control" id="dtNparto" type="date" required>
+
+                    <label>Data Ultimo Parto</label>
+                    <input class="form-control" id="dtUparto" type="date" required>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-auto text-left">
+                    <button type="button" class="btn btn-danger" onclick="voltar()">Voltar</button>
+                </div>
+                <div class="col-sm text-right">
+                    <button id="btnSave" type="button" class="btn btn-success" onclick="dados()">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="cadastro.js"></script>
+<script src="../Servicos/bovinos.servicos.js"></script>
+
+</html>
